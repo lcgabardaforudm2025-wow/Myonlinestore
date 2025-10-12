@@ -1,88 +1,132 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>LUCKIE MOTORSHOP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luckie Motorshop</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="slider.css">
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src=""></script>
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="slider.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="slider.js"></script> <!-- Replace with actual slider script -->
+
+  <!-- Inline Styles -->
   <style>
-    /* extra style for caption text */
-    #caption {
+    body {
+      margin: 0;
       font-family: Verdana, sans-serif;
-      font-size: 14px;
+      background-color: #006400;
       color: #000;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    header h1 {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 2.5em;
+      color: blue;
+      margin: 0;
+    }
+
+    header h2 {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 2em;
+      color: red;
       margin-top: 10px;
+    }
+
+    .slider {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .slider img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1.2em;
+      color: red;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      padding: 10px 0;
+      background-color: #f0f0f0;
     }
   </style>
 </head>
-<body bgcolor="green">
+<body>
 
-<div id="container">
+  <header>
+    <h1>LUCKIE MOTORSHOP</h1>
+    <h2>MALAS MO, SWERTE NAMIN</h2>
+  </header>
 
-  <marquee behavior="alternate">
-    <font face="Comic Sans" size="6" color="blue">
-      <h2><center>LUCKIE MOTORSHOP</center></h2>
-    </font>
-  </marquee>
+  <section class="slider" id="banner-fade">
+    <img src="engine-block.webp" alt="Engine Block - ₱5,000" title="Engine Block - ₱5,000" />
+    <img src="tophead.jpg" alt="Top Head - ₱2,000" title="Top Head - ₱2,000" />
+    <img src="luckielogo.png" alt="Luckie Logo" title="Luckie Logo" />
+    <img src="crankshaft.jpg" alt="Crankshaft - ₱2,500" title="Crankshaft - ₱2,500" />
+    <img src="camshaft.jpg" alt="Camshaft - ₱1,000" title="Camshaft - ₱1,000" />
+  </section>
 
-  <h2>
-    <center>
-      <font face="Comic Sans" size="6" color="red">
-        MALAS MO SWERTE NAMIN 
-      </font>
-    </center>
-  </h2>
+  <script>
+    $(document).ready(function () {
+      $('#banner-fade').bjqs({
+        height: 320,
+        width: 620,
+        responsive: true
+      });
+    });
+  </script>
 
-  <div id="banner-fade">
-    <center>
-      <img src="Engine block price=5,000.webp" width="300" height="200" title=Engine-block-price=5,000">
-      <img src="tophead price=2,000.jpg" width="300" height="200" title=Tophead-price=2,000>
-      <img src="luckielogo.png" width="300" height="200" title="luckielogo">
-      <img src="crankshaft.jpg" width="300" height="200" title=Crankshaft-price=2,500>
-      <img src="camshaft price=1,000.jpg" width="300" height="200" title=Camshaft-price=1,000>
-    </center>
+  <nav>
+    <a href="engine.html">Engine Block</a>
+    <a href="tophead.html">Top Head Assembly</a>
+    <a href="crankshaft.html">Crankshaft</a>
+    <a href="cams.html">Camshaft</a>
+  </nav>
+
+  <div class="contact">
+    Brgy 123 Tondo, Manila<br />
+    Cell Number: 0993-791-0017
   </div>
 
-</div>
-
-<script class="secret-source">
-jQuery(document).ready(function($) {
-  $('#banner-fade').bjqs({
-    height: 320,
-    width: 620,
-    responsive: true
-  });
-});
-</script>
-
-<!-- Navigation Links -->
-<font face="Verdana" size="2" color="#666666">
-  <center>
-    <a href="engine.html">Engine Block</a> /
-    <a href="tophead.html">Top Head Assembly</a> /
-    <a href="crankshaft.html">Crankshaft</a> /
-    <a href="Cams.html">Camshaft</a>
-  </center>
-</font>
-
-<!-- Block 6 Address / Contact -->
-<font face="Comic Sans" size="4" color="red">
-  <center>
-    Brgy 123 Tondo, Manila <br>
-    Cell Number: 09937910017
-  </center>
-</font>
-
-<font face="Verdana" size="2" color="#666661">
-  <center>Copyright © 2015 All rights reserved.</center>
-</font>
-
+  <footer>
+    &copy; 2015 Luckie Motorshop. All rights reserved.
+  </footer>
 
 </body>
 </html>
-
-
-
-
